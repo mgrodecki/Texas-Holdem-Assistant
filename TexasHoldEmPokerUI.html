@@ -1,0 +1,781 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ /**
+ * 52 Card Standard Deck of Cards Display: Adapted from http://selfthinker.github.com/CSS-Playing-Cards/
+********************************************************************/
+-->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Texas Hold'em Poker Assistant</title>
+    <link rel="stylesheet" type="text/css" href="cards.css" media="screen" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+    <script type="text/javascript"><!--
+    $(document).ready(function(){
+        $('.toggle li').click(function(){
+            $('.playingCards').toggleClass($(this).text());
+        });
+        $('.lang li').click(function(){
+            $('html').attr('lang', $(this).text());
+            $('html').attr('xml:lang', $(this).text());
+        });
+    });
+    //--></script>
+   
+    <script type="text/javascript">
+    function func1()
+    {
+        var selectcard = document.getElementById("cards1").value;
+        var selectsuit = document.getElementById("suit1").value;
+        return selectsuit;
+    }
+    </script>
+
+
+
+
+    <style type="text/css"><!--
+        body {
+            margin: 1em 10%;
+        }
+        .options.active {
+            position: fixed;
+            top: 1em;
+            right: 1em;
+            background: #ddd;
+            padding: .5em;
+        }
+        .options.active h3 {
+            font-size: 1.2em;
+        }
+        .options.active ul {
+            padding: 0;
+        }
+        .options.active li {
+            color: #00c;
+            text-decoration: underline;
+            margin-left: 1.5em;
+            cursor: pointer;
+        }
+        .options.active li:hover {
+            text-decoration: none;
+        }
+        div.clear {
+            clear: both;
+            height: 0;
+            line-height: 0;
+            font-size: 1px;
+            visibility: hidden;
+        }
+    --></style>
+
+
+
+</head>
+<body>
+
+
+    
+<div class="playingCards fourColours rotateHand">
+
+    <h1>Texas Hold'em Poker Assistant</h1>
+
+    <p><strong>Select your cards and cards on the table. Press "calculate" <br> to see your winning probabilities. </strong></p>
+
+
+
+<!-- ul.table -->
+    <h3>Table Cards</h3>
+
+
+    <label for="cards1">Card 1: Select Rank</label>
+
+    <select name="cards1" id="cards1">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="suit1">Card 1: Select Suit</label>
+
+    <select name="suit1" id="suit1">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+    <label for="update1"></label>
+    <button onClick="window.location.reload();">Update Card</button>
+
+    <br>
+
+    <label for="cards2">Card 2: Select Rank</label>
+
+    <select name="cards2" id="cards2">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="suit2">Card 2: Select Suit</label>
+
+    <select name="suit2" id="suit2">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+    <label for="update2"></label>
+    <button onClick="window.location.reload();">Update Card</button>
+
+    <br>
+
+    <label for="cards3">Card 3: Select Rank</label>
+
+    <select name="cards3" id="cards3">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="suit3">Card 3: Select Suit</label>
+
+    <select name="suit3" id="suit3">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+    <label for="update3"></label>
+    <button onClick="window.location.reload();">Update Card</button>
+
+    <br>
+
+    <label for="cards4">Card 4: Select Rank</label>
+
+    <select name="cards4" id="cards4">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="suit4">Card 4: Select Suit</label>
+
+    <select name="suit4" id="suit4">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+    <label for="update4"></label>
+    <button onClick="window.location.reload();">Update Card</button>
+
+    <br>
+
+    <label for="cards5">Card 5: Select Rank</label>
+
+    <select name="cards5" id="cards5">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="suit5">Card 5: Select Suit</label>
+
+    <select name="suit5" id="suit5">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+    <label for="update5"></label>
+    <button onClick="window.location.reload();">Update Card</button>
+
+
+    <br>
+    <br>
+    <br>
+
+
+    <ul class="table">
+            <li class="card1">
+
+            <a class="cardrank1">
+                <script>
+                    let selectcard_1 = document.getElementById("cards1");
+                    let selectsuit_1 = document.getElementById("suit1");
+                    let classname_1 = "card " + selectcard_1.value + " " + selectsuit_1.value;
+                    document.getElementsByClassName("cardrank1")[0].className = classname_1;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let selectcard1 = document.getElementById("cards1");
+                    if (selectcard1.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (selectcard1.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (selectcard1.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (selectcard1.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (selectcard1.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (selectcard1.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (selectcard1.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (selectcard1.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (selectcard1.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (selectcard1.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (selectcard1.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (selectcard1.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (selectcard1.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[0].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let selectsuit1 = document.getElementById("suit1");
+                    document.getElementsByClassName("suit")[0].innerHTML ="&" +  selectsuit1.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+        
+        <li class="card2">
+
+            <a class="cardrank2">
+                <script>
+                    let selectcard_2 = document.getElementById("cards2");
+                    let selectsuit_2 = document.getElementById("suit2");
+                    let classname_2 = "card " + selectcard_2.value + " " + selectsuit_2.value;
+                    document.getElementsByClassName("cardrank2")[0].className = classname_2;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let selectcard2 = document.getElementById("cards2");
+                    if (selectcard2.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (selectcard2.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (selectcard2.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (selectcard2.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (selectcard2.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (selectcard2.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (selectcard2.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (selectcard2.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (selectcard2.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (selectcard2.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (selectcard2.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (selectcard2.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (selectcard2.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[1].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let selectsuit2 = document.getElementById("suit2");
+                    document.getElementsByClassName("suit")[1].innerHTML = "&" + selectsuit2.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+
+        <li class="card3">
+
+            <a class="cardrank3">
+                <script>
+                    let selectcard_3 = document.getElementById("cards3");
+                    let selectsuit_3 = document.getElementById("suit3");
+                    let classname_3 = "card " + selectcard_3.value + " " + selectsuit_3.value;
+                    document.getElementsByClassName("cardrank3")[0].className = classname_3;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let selectcard3 = document.getElementById("cards3");
+                    if (selectcard3.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (selectcard3.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (selectcard3.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (selectcard3.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (selectcard3.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (selectcard3.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (selectcard3.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (selectcard3.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (selectcard3.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (selectcard3.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (selectcard3.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (selectcard3.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (selectcard3.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[2].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let selectsuit3 = document.getElementById("suit3");
+                    document.getElementsByClassName("suit")[2].innerHTML = "&" + selectsuit3.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+        <li class="card4">
+
+            <a class="cardrank4">
+                <script>
+                    let selectcard_4 = document.getElementById("cards4");
+                    let selectsuit_4 = document.getElementById("suit4");
+                    let classname_4 = "card " + selectcard_4.value + " " + selectsuit_4.value;
+                    document.getElementsByClassName("cardrank4")[0].className = classname_4;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let selectcard4 = document.getElementById("cards4");
+                    if (selectcard4.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (selectcard4.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (selectcard4.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (selectcard4.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (selectcard4.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (selectcard4.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (selectcard4.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (selectcard4.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (selectcard4.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (selectcard4.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (selectcard4.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (selectcard4.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (selectcard4.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[3].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let selectsuit4 = document.getElementById("suit4");
+                    document.getElementsByClassName("suit")[3].innerHTML = "&" + selectsuit4.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+        <li class="card5">
+ 
+            <a class="cardrank5">
+                <script>
+                    let selectcard_5 = document.getElementById("cards5");
+                    let selectsuit_5 = document.getElementById("suit5");
+                    let classname_5 = "card " + selectcard_5.value + " " + selectsuit_5.value;
+                    document.getElementsByClassName("cardrank5")[0].className = classname_5;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let selectcard5 = document.getElementById("cards5");
+                    if (selectcard5.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (selectcard5.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (selectcard5.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (selectcard5.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (selectcard5.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (selectcard5.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (selectcard5.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (selectcard5.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (selectcard5.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (selectcard5.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (selectcard5.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (selectcard5.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (selectcard5.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[4].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let selectsuit5 = document.getElementById("suit5");
+                    document.getElementsByClassName("suit")[4].innerHTML = "&" + selectsuit5.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+    </ul>
+    <div class="clear"></div>
+
+    <br>
+
+
+<!-- ul.hand -->
+    <h3>Your Cards</h3>
+
+
+    <label for="UserCards1">Card 1: Select Rank</label>
+
+    <select name="UserCards1" id="UserCards1">
+    <option value="rank-2">2</option>
+    <option value="rank-3">3</option>
+    <option value="rank-4">4</option>
+    <option value="rank-5">5</option>
+    <option value="rank-6">6</option>
+    <option value="rank-7">7</option>
+    <option value="rank-8">8</option>
+    <option value="rank-9">9</option>
+    <option value="rank-10">10</option>
+    <option value="rank-j">Joker</option>
+    <option value="rank-a">Ace</option>
+    <option value="rank-q">Queen</option>
+    <option value="rank-k">King</option>
+    </select> 
+
+    <label for="UserSuit1">Card 1: Select Suit</label>
+
+    <select name="UserSuit1" id="UserSuit1">
+    <option value="hearts">Hearts</option>
+    <option value="clubs">Clubs</option>
+    <option value="diams">Diamonds</option>
+    <option value="spades">Spades</option>
+    </select> 
+
+<label for="update6"></label>
+<button onClick="window.location.reload();">Update Card</button>
+<br>
+
+<label for="UserCards2">Card 2: Select Rank</label>
+
+<select name="UserCards2" id="UserCards2">
+  <option value="rank-2">2</option>
+  <option value="rank-3">3</option>
+  <option value="rank-4">4</option>
+  <option value="rank-5">5</option>
+  <option value="rank-6">6</option>
+  <option value="rank-7">7</option>
+  <option value="rank-8">8</option>
+  <option value="rank-9">9</option>
+  <option value="rank-10">10</option>
+  <option value="rank-j">Joker</option>
+  <option value="rank-a">Ace</option>
+  <option value="rank-q">Queen</option>
+  <option value="rank-k">King</option>
+</select> 
+
+<label for="UserSuit2">Card 2: Select Suit</label>
+
+<select name="UserSuit2" id="UserSuit2">
+  <option value="hearts">Hearts</option>
+  <option value="clubs">Clubs</option>
+  <option value="diams">Diamonds</option>
+  <option value="spades">Spades</option>
+</select> 
+<label for="update7"></label>
+<button onClick="window.location.reload();">Update Card</button>
+
+<br>
+<br>
+<br>
+
+    <ul class="table">
+        <li class="UserCard1">
+ 
+            <a class="ucardrank1">
+                <script>
+                    let uselectcard_1 = document.getElementById("UserCards1");
+                    let uselectsuit_1 = document.getElementById("UserSuit1");
+                    let uclassname_1 = "card " + uselectcard_1.value + " " + uselectsuit_1.value;
+                    document.getElementsByClassName("ucardrank1")[0].className = uclassname_1;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let uselectcard1 = document.getElementById("UserCards1");
+                    if (uselectcard1.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (uselectcard1.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (uselectcard1.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (uselectcard1.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (uselectcard1.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (uselectcard1.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (uselectcard1.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (uselectcard1.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (uselectcard1.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (uselectcard1.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (uselectcard1.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (uselectcard1.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (uselectcard1.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[5].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let uselectsuit1 = document.getElementById("UserSuit1");
+                    document.getElementsByClassName("suit")[5].innerHTML = "&" + uselectsuit1.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+        <li class="UserCard2">
+  
+            <a class="ucardrank2">
+                <script>
+                    let uselectcard_2 = document.getElementById("UserCards2");
+                    let uselectsuit_2 = document.getElementById("UserSuit2");
+                    let uclassname_2 = "card " + uselectcard_2.value + " " + uselectsuit_2.value;
+                    document.getElementsByClassName("ucardrank2")[0].className = uclassname_2;
+                </script>
+
+                <span class="rank"></span>
+                <script> 
+                    let uselectcard2 = document.getElementById("UserCards2");
+                    if (uselectcard2.value == "rank-2"){
+                        rank = "2";
+                    }                    
+                    if (uselectcard2.value == "rank-3"){
+                        rank = "3";
+                    }                    
+                    if (uselectcard2.value == "rank-4"){
+                        rank = "4";
+                    }                    
+                    if (uselectcard2.value == "rank-5"){
+                        rank = "5";
+                    }
+                    if (uselectcard2.value == "rank-6"){
+                        rank = "6";
+                    }                    
+                    if (uselectcard2.value == "rank-7"){
+                        rank = "7";
+                    }
+                    if (uselectcard2.value == "rank-8"){
+                        rank = "8";
+                    }                    
+                    if (uselectcard2.value == "rank-9"){
+                        rank = "9";
+                    }
+                    if (uselectcard2.value == "rank-10"){
+                        rank = "10";
+                    }                    
+                    if (uselectcard2.value == "rank-j"){
+                        rank = "J";
+                    }
+                    if (uselectcard2.value == "rank-q"){
+                        rank = "Q";
+                    }
+                    if (uselectcard2.value == "rank-k"){
+                        rank = "K";
+                    }
+                    if (uselectcard2.value == "rank-a"){
+                        rank = "A";
+                    }
+                    document.getElementsByClassName("rank")[6].innerHTML = rank; 
+                </script>
+
+                <span class="suit"></span>
+                <script> 
+                    let uselectsuit2 = document.getElementById("UserSuit2");
+                    document.getElementsByClassName("suit")[6].innerHTML = "&" + uselectsuit2.value + ";"; 
+                </script>
+
+            </a>
+        </li>   
+    </ul>
+    <div class="clear"></div>
+
+
+    <br>
+<br>
+<br>
+
+Probability of Winning:
+
+</body>
+</html>
